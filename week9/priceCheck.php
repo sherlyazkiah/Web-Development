@@ -57,6 +57,41 @@ if (!isset($_SESSION['username'])) {
         <p>Grand Hotel, 123 Regency Boulevard, Downtown District, Metropolitan City, 12345</p>
     </div>
 
-    <script src="price.js"></script>
+    <script>
+        function calculatePrice() {
+            const floor = parseInt(document.getElementById('floor').value);
+            const typePrice = parseInt(document.getElementById('type').value);
+            const days = parseInt(document.getElementById('days').value);
+            const discount = document.getElementById('discount').value;
+
+            let rentalPrice = typePrice * days;
+            let discountAmount = 0;
+            let totalPrice = rentalPrice;
+
+            if (floor > 5) {
+                rentalPrice += 1000;
+            }
+
+            if (discount === 'member') {
+                discountAmount = rentalPrice * 0.1;
+                rentalPrice *= 0.9;
+            } else if (discount === 'birthday') {
+                discountAmount = 500;
+                rentalPrice -= 500;
+            }
+
+            rentalPrice = Math.max(rentalPrice, 0);
+            totalPrice = Math.max(totalPrice, 0);
+
+            const totalPayment = rentalPrice;
+            const resultText = `
+                <p>Total Price: IDR ${totalPrice}</p>
+                <p>Total Discount: IDR ${discountAmount}</p>
+                <p>Total Payment: IDR ${totalPayment}</p>
+            `;
+
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
 </body>
 </html>
