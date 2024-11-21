@@ -1,8 +1,7 @@
 <?php
 session_start();
-// Redirect to login page if not logged in
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php'); // Redirect to login page
+    header('Location: formLogin.html');
     exit();
 }
 ?>

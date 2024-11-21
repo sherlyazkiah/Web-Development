@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SARS Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row vh-100">
+      <!-- Sidebar -->
+      <div class="col-md-3 col-lg-2 bg-light sidebar py-4">
+        <h5 class="text-center mb-4">Dashboard</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-3"><a href="#" class="nav-link text-primary">Profile</a></li>
+          <li class="nav-item mb-3"><a href="#" class="nav-link text-primary">Submission</a></li>
+          <li class="nav-item mb-3"><a href="#" class="nav-link text-primary">Approval</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-primary">Achievement</a></li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-md-9 col-lg-10">
+        <div class="p-4">
+          <!-- Header -->
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+              <h3 class="fw-bold">Welcome to SARS!</h3>
+              <p class="text-muted">SARS is a platform for documenting and managing the achievements of students at the State Polytechnic of Malang, specifically in the Information Technology department.</p>
+            </div>
+            <input type="text" class="form-control w-25" placeholder="Search">
+          </div>
+
+          <!-- Stats -->
+          <div class="row text-center mb-4">
+            <div class="col">
+              <div class="stat-card bg-primary text-white rounded py-4">
+                <h3 class="fw-bold">10</h3>
+                <p>International Achievement</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="stat-card bg-success text-white rounded py-4">
+                <h3 class="fw-bold">13</h3>
+                <p>National Achievement</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="stat-card bg-warning text-white rounded py-4">
+                <h3 class="fw-bold">8</h3>
+                <p>Regional Achievement</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement List -->
+          <h4 class="mb-3">My Achievement</h4>
+          <table class="table table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th>No</th>
+                <th>Achievement Name</th>
+                <th>Level</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>1st Place in UI/UX Competition</td>
+                <td>National</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>3rd Place in Story Telling Competition</td>
+                <td>International</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Profile & Top 3 -->
+          <div class="row mt-5">
+            <div class="col-md-6">
+              <div class="card p-4 text-center">
+                <img src="profile-placeholder.png" alt="Profile" class="rounded-circle mb-3" style="width: 80px;">
+                <h5 class="mb-1">Adam Smith</h5>
+                <p class="text-muted">DIV Informatics Engineering</p>
+                <p>Achievement: <strong>1</strong> | Current Rank: <strong>7</strong></p>
+                <button class="btn btn-success w-100">My Profile</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4>Top 3</h4>
+              <table class="table table-bordered mt-3">
+                <thead class="table-light">
+                  <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>TA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Cecilia</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Jeremy</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Leona</td>
+                    <td>2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
