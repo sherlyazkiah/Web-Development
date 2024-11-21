@@ -13,9 +13,15 @@
         <?php
         include('koneksi.php');
         $query = "SELECT * FROM anggota ORDER BY id DESC";
-        $result = sql($koneksi, $query);
+        // Execute the query
+        $result = sqlsrv_query($conn, $query);
+
+        if (!$result) {
+            // If there's an error executing the query, display an error message
+            die(print_r(sqlsrv_errors(), true));
+        }
         ?>
-        
+
         <table class="table">
             <thead class="thead-light">
                 <tr>
@@ -30,7 +36,7 @@
             <tbody>
                 <?php
                 $no = 1;
-                while ($row = mysqli_fetch_assoc($result)) {
+                while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
                     $kelamin = ($row["jenis_kelamin"] == 'L') ? 'Laki-Laki' : 'Perempuan';
                 ?>
                 <tr>

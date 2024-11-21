@@ -68,16 +68,20 @@ if (!isset($_SESSION['username'])) {
             let discountAmount = 0;
             let totalPrice = rentalPrice;
 
-            if (floor > 5) {
-                rentalPrice += 1000;
-            }
+            if (floor < 1 || days < 1) {
+                discountAmount = 0;
+            } else {
+                if (floor > 5) {
+                    rentalPrice += 1000;
+                }
 
-            if (discount === 'member') {
-                discountAmount = rentalPrice * 0.1;
-                rentalPrice *= 0.9;
-            } else if (discount === 'birthday') {
-                discountAmount = 500;
-                rentalPrice -= 500;
+                if (discount === 'member') {
+                    discountAmount = rentalPrice * 0.1;
+                    rentalPrice *= 0.9;
+                } else if (discount === 'birthday') {
+                    discountAmount = 500;
+                    rentalPrice -= 500;
+                }
             }
 
             rentalPrice = Math.max(rentalPrice, 0);

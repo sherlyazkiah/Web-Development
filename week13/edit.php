@@ -8,10 +8,21 @@
     <?php
     include('koneksi.php');
     $id = $_GET['id'];
-    $query = "SELECT * FROM anggota WHERE id = $id";
-    $result = mysqli_query($koneksi, $query);
-    $row = mysqli_fetch_assoc($result);
-    mysqli_close($koneksi);
+
+    // Query to fetch the data
+    $query = "SELECT * FROM anggota WHERE id = ?";
+    $params = array(&$id);
+
+    // Prepare and execute the query
+    $stmt = sqlsrv_prepare($conn, $query, $params);
+
+    if (sqlsrv_execute($stmt)) {
+        $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+    } else {
+        die(print_r(sqlsrv_errors(), true));
+    }
+
+    sqlsrv_close($conn);
     ?>
     <div class="container mt-4">
         <h2>Edit Data Anggota</h2>
