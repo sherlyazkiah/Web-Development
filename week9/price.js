@@ -16,7 +16,5 @@ function calculatePrice() {
         rentalPrice -= 500;
     }
 
-    rentalPrice = Math.max(rentalPrice, 0);
-
     document.getElementById('result').textContent = `Total Price: IDR ${rentalPrice}`;
 }
